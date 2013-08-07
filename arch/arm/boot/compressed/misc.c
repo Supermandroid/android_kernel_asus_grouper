@@ -147,6 +147,11 @@ unsigned char *output_data;
 unsigned long free_mem_ptr;
 unsigned long free_mem_end_ptr;
 
+#ifdef CONFIG_KERNEL_LZ4
+#include "../../../../lib/decompress_unlz4.c"
+#endif
+ 
+
 #ifndef arch_error
 #define arch_error(x)
 #endif
